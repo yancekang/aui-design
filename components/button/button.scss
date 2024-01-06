@@ -1,0 +1,20 @@
+.aui-btn {
+  height: 30px;
+  padding: 0 10px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  border-radius: 3px;
+  color: #222;
+  transition: all .3s;
+  background: rgba(9, 30, 66, 0.1);
+  &:hover {
+    background: rgba(9, 30, 66, 0.08);
+  }
+  &.aui-btn-primary {
+    background: rgba(9, 30, 66, 0.8);
+    color: #fff;
+    &:hover {
+      background: rgba(9, 30, 66, 0.7);
+    }
+  }
+}

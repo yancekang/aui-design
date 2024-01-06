@@ -1,0 +1,17 @@
+---
+title: button
+subtitle: 按钮
+group:
+  title: 通用
+  order: 1
+categor: 组件
+demo:
+  cols: 2
+---
+
+Button
+
+`antd` 为 Web 应用提供了丰富的基础 UI 组件，我们还将持续探索企业级应用的最佳 UI 实践。除了官方组件，我们也提供了[社区精选组件](/docs/react/recommendation-cn)作为必要的补充，另外如果您是内网用户，欢迎尝试使用 [TechUI](https://techui.alipay.com)。
+
+<code src="./_demo/button.tsx">分栏1</code>
+<code src="./_demo/button.tsx"></code>
