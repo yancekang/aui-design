@@ -15,3 +15,5 @@ tag: vVERSION
 - 主版本号：含有破坏性更新和新特性，不在发布周期内。
 
 ---
+
+- 🆕 新增 Button 组件[#e73fe0d](https://github.com/ant-design/ant-design/pull/e73fe0d) [@YanceyKang](https://github.com/YanceyKang)

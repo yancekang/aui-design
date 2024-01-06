@@ -15,3 +15,7 @@ tag: vVERSION
 - Major version release is not included in this schedule for breaking change and new features.
 
 ---
+
+## 5.0.0
+
+- 🆕 Add component Button. [#e73fe0d](https://github.com/ant-design/ant-design/pull/e73fe0d) [@YanceyKang](https://github.com/YanceyKang)

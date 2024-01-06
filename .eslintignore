@@ -18,8 +18,10 @@ node_modules
 _site
 dist
 coverage
+scripts/
 **/*.d.ts
 # Scripts
 scripts/previewEditor/**/*
 jest-stare
 .fatherrc.ts
+.dumirc.ts

@@ -12,8 +12,12 @@ export default defineConfig({
   resolve: {
     docDirs: [{ type: 'doc', dir: 'docs' }],
     atomDirs: [{ type: 'component', dir: 'components' }],
-    // codeBlockMode: 'passive',
+    codeBlockMode: 'passive',
   },
+  alias: {
+    // 'aui-design': path.join(__dirname, 'components'),
+  },
+  metas: [{ name: 'theme-color', content: '#1677ff' }],
   locales: [
     { id: 'en-US', name: 'English', suffix: '' },
     { id: 'zh-CN', name: '中文', suffix: '-cn' },
