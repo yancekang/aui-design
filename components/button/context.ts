@@ -1,5 +1,6 @@
-import React from "react";
-import { ButtonProps } from "./button";
+import React from 'react';
+import type { ButtonProps } from './button';
+
 export const defaultIconPrefixCls = 'anticon';
 
 export interface ComponentStyleConfig {
@@ -17,7 +18,10 @@ export interface ConfigConsumerProps {
   getPrefixCls: (suffixCls?: string, customizePrefixCls?: string) => string;
 }
 
-const defaultGetPrefixCls = (suffixCls?: string, customizePrefixCls?: string) => {
+const defaultGetPrefixCls = (
+  suffixCls?: string,
+  customizePrefixCls?: string,
+) => {
   if (customizePrefixCls) {
     return customizePrefixCls;
   }

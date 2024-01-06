@@ -1,10 +1,8 @@
-import React from "react";
-import { createSearchParams, useOutlet, useSearchParams, useServerInsertedHTML } from 'dumi';
+import { useOutlet } from 'dumi';
+import React from 'react';
 
 export default function GlobalLayout() {
   const outlet = useOutlet();
 
-  return (
-    <div>{outlet}</div>
-  )
+  return <div>{outlet}</div>;
 }

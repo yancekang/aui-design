@@ -1,8 +1,8 @@
-import React, { ReactNode, useContext } from "react";
-import { ButtonHTMLType, ButtonType } from "./button.d";
-import classNames from "classnames";
-import { ConfigContext } from "./context";
-import './button.scss'
+import classNames from 'classnames';
+import React from 'react';
+import type { ButtonHTMLType, ButtonType } from './button.d';
+import './button.scss';
+// import { ConfigContext } from './context';
 export interface BaseButtonProps {
   type?: ButtonType;
   icon?: React.ReactNode;
@@ -33,23 +33,25 @@ export interface ButtonProps extends BaseButtonProps, MergedHTMLAttributes {
   htmlType?: ButtonHTMLType;
 }
 
-export default function Button(props:ButtonProps) {
-  let { type } = props
-  const { getPrefixCls} = useContext(ConfigContext);
-  const prefixCls = getPrefixCls('btn');
-  const classes = classNames(prefixCls,
-    {
-      [`${prefixCls}-${type}`]: type,
-    },
-  );
-  const handleClick  = (e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement, MouseEvent>) => {
+export default function Button(props: ButtonProps) {
+  const { type } = props;
+  // const { getPrefixCls } = useContext(ConfigContext);
+  const prefixCls = 'aui';
+  const classes = classNames(prefixCls, {
+    [`${prefixCls}-${type}`]: type,
+  });
+  const handleClick = (
+    e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement, MouseEvent>,
+  ) => {
     const { onClick } = props;
     // FIXME: https://github.com/ant-design/ant-design/issues/30207
-    (onClick as React.MouseEventHandler<HTMLButtonElement | HTMLAnchorElement>)?.(e);
-  }
+    (
+      onClick as React.MouseEventHandler<HTMLButtonElement | HTMLAnchorElement>
+    )?.(e);
+  };
   return (
-    <button className={classes} type="button"  onClick={handleClick}>
+    <button className={classes} type="button" onClick={handleClick}>
       {props.children}
     </button>
-  )
+  );
 }

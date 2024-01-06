@@ -1,28 +1,17 @@
 import classNames from 'classnames';
 import { Helmet, useOutlet, useSiteData } from 'dumi';
-import React, { useContext, useEffect, useLayoutEffect, useMemo, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import Header from '../slots/Header';
 import SideMenu from '../slots/SideMenu';
-import '../style/common.scss'
-const locales = {
-  cn: {
-    title: 'Ant Design - 一套企业级 UI 设计语言和 React 组件库',
-    description: '基于 Ant Design 设计体系的 React UI 组件库，用于研发企业级中后台产品。',
-  },
-  en: {
-    title: "Ant Design - The world's second most popular React UI framework",
-    description:
-      'An enterprise-class UI design language and React UI library with a set of high-quality React components, one of best React UI library for enterprises',
-  },
-};
+import '../style/common.scss';
 
 const DocLayout: React.FC = () => {
   const outlet = useOutlet();
   const { pathname, search, hash } = location;
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const { loading } = useSiteData();
-  const lang = 'cn'
-  const direction = 'rtl'
+  const lang = 'cn';
+  const direction = 'rtl';
   useEffect(() => {
     const nprogressHiddenStyle = document.getElementById('nprogress-style');
     if (nprogressHiddenStyle) {
@@ -71,7 +60,10 @@ const DocLayout: React.FC = () => {
         <html
           lang={lang === 'cn' ? 'zh-CN' : lang}
           data-direction={direction}
-          className={classNames({ rtl: direction === 'rtl' }, {'doc-html': true})}
+          className={classNames(
+            { rtl: direction === 'rtl' },
+            { 'doc-html': true },
+          )}
         />
         <link
           sizes="144x144"
@@ -83,14 +75,11 @@ const DocLayout: React.FC = () => {
           property="og:image"
           content="https://gw.alipayobjects.com/zos/rmsportal/rlpTLlbMzTNYuZGGCVYM.png"
         />
-        
       </Helmet>
-      <Header></Header>
-      <div className='doc-container'>
-      <SideMenu></SideMenu>
-      <div>
-      {outlet}
-      </div>
+      <Header />
+      <div className="doc-container">
+        <SideMenu />
+        <div>{outlet}</div>
       </div>
     </>
   );

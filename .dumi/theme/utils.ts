@@ -1,4 +1,3 @@
-
 interface Meta {
   skip?: boolean;
   category?: any;
@@ -26,7 +25,9 @@ export function getMenuItems(
   categoryOrder: Orders,
   typeOrder: Orders,
 ) {
-  const menuMeta = moduleData.map((item) => item.meta).filter((meta) => !meta.skip);
+  const menuMeta = moduleData
+    .map((item) => item.meta)
+    .filter((meta) => !meta.skip);
 
   const menuItems: Meta[] = [];
   const sortFn = (a: Meta, b: Meta) => (a.order || 0) - (b.order || 0);
@@ -143,7 +144,7 @@ export function getLocalizedPathname(
     const localHash = hash[zhCN ? 'zhCN' : 'enUS'];
     fullPath += `#${localHash}`;
   }
-  
+
   return { pathname: fullPath, search };
 }
 

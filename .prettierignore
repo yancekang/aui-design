@@ -1,2 +1,9 @@
-/dist
+/dist/
+/_site/
+/.dumi/
+/.husky/
+.local
+.output.js
+/node_modules/**
+
 *.yaml

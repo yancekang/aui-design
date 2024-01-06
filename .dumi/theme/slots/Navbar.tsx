@@ -1,8 +1,9 @@
-import React from "react";
-import '../style/header.scss'
+import { Link, useLocation } from 'dumi';
+import React from 'react';
 import useLocale from '../hooks/useLocale';
-import { Link, useLocation } from "dumi";
+import '../style/header.scss';
 import * as utils from '../utils';
+
 const locales = {
   cn: {
     design: '设计',
@@ -20,24 +21,33 @@ const locales = {
   },
 };
 export default function Navbar() {
-  const { pathname, search } = useLocation();
+  const { search } = useLocation();
   const [locale, lang] = useLocale(locales);
-  const localea = useLocale();
   const isZhCN = lang === 'cn';
   return (
     <div className="nav-bar">
-      <Link to={utils.getLocalizedPathname('/docs/spec/introduce', isZhCN, search)}>
+      <Link
+        to={utils.getLocalizedPathname('/docs/spec/introduce', isZhCN, search)}
+      >
         {locale.design}
       </Link>
-      <Link to={utils.getLocalizedPathname('/docs/spec/development', isZhCN, search)}>
+      <Link
+        to={utils.getLocalizedPathname(
+          '/docs/spec/development',
+          isZhCN,
+          search,
+        )}
+      >
         {locale.development}
       </Link>
-      <Link to={utils.getLocalizedPathname('/components/overview', isZhCN, search)}>
+      <Link
+        to={utils.getLocalizedPathname('/components/overview', isZhCN, search)}
+      >
         {locale.components}
       </Link>
       <Link to={utils.getLocalizedPathname('/docs/resources', isZhCN, search)}>
         {locale.resources}
       </Link>
     </div>
-  )
+  );
 }
