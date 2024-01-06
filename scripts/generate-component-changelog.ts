@@ -40,11 +40,11 @@ camelComponentNames.forEach((name) => {
   componentNameMap[name] = [...fillComponentKey(name), 'Global:'];
 });
 
-// componentNameMap.ConfigProvider.push(...fillComponentKey('Wave'));
-// componentNameMap.Grid.push(...fillComponentKey('Row'));
-// componentNameMap.Grid.push(...fillComponentKey('Col'));
-// componentNameMap.Message.push(...fillComponentKey('message'));
-// componentNameMap.Notification.push(...fillComponentKey('notification'));
+componentNameMap.ConfigProvider.push(...fillComponentKey('Wave'));
+componentNameMap.Grid.push(...fillComponentKey('Row'));
+componentNameMap.Grid.push(...fillComponentKey('Col'));
+componentNameMap.Message.push(...fillComponentKey('message'));
+componentNameMap.Notification.push(...fillComponentKey('notification'));
 
 // Collect misc. When ComponentName not match will fallback to misc
 const miscKeys = [
