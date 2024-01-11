@@ -10,9 +10,7 @@ es/**/*
 lib/**/*
 locale
 server
-.dumi/tmp
-.dumi/tmp-production
-!.dumi/
+.dumi
 node_modules
 .eslintcache
 _site

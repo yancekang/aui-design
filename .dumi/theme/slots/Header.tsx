@@ -1,9 +1,11 @@
 import { useLocation } from 'dumi';
 import React, { useCallback } from 'react';
-import Button from '../../../components/button/button';
+// import Button from '../../../components/button/button';
 import '../style/header.scss';
 import * as utils from '../utils';
 import Navbar from './Navbar';
+import { Button } from 'aui-design';
+
 
 export default function Header() {
   const { pathname, search } = useLocation();
@@ -36,7 +38,7 @@ export default function Header() {
         />
       </div>
       <Navbar />
-      <Button onClick={onLangChange}>12</Button>
+      <Button type="primary" onClick={onLangChange}>中/英</Button>
     </div>
   );
 }

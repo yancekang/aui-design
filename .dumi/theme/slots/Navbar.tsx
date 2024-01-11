@@ -3,7 +3,6 @@ import React from 'react';
 import useLocale from '../hooks/useLocale';
 import '../style/header.scss';
 import * as utils from '../utils';
-
 const locales = {
   cn: {
     design: '设计',

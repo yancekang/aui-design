@@ -162,7 +162,7 @@ async function printLog() {
             setTimeout(() => {
               reject(new Error(`Fetch timeout of ${timeout}ms exceeded`));
             }, timeout);
-            fetch(`https://github.com/ant-design/ant-design/pull/${pr}`)
+            fetch(`https://github.com/yancekang/aui-design/pull/${pr}`)
               .then((response) => {
                 response.text().then((htmlRes) => {
                   html = htmlRes;
@@ -262,11 +262,11 @@ async function printLog() {
         }
 
         console.log(
-          `- ${icon} ${str}[#${pr}](https://github.com/ant-design/ant-design/pull/${pr})${authorText}`,
+          `- ${icon} ${str}[#${pr}](https://github.com/yancekang/aui-design/pull/${pr})${authorText}`,
         );
       } else {
         console.log(
-          `🆘 Miss Match: ${title} -> https://github.com/ant-design/ant-design/commit/${hash}`,
+          `🆘 Miss Match: ${title} -> https://github.com/yancekang/aui-design/commit/${hash}`,
         );
       }
     });

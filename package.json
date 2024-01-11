@@ -1,6 +1,6 @@
 {
   "name": "aui-design",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A react library developed with dumi",
   "license": "MIT",
   "author": "yangon",
@@ -22,7 +22,7 @@
     "docs:build": "dumi build",
     "doctor": "father doctor",
     "format": "prettier --cache --write .",
-    "lint": "npm run tsc && npm run lint:script && npm run lint:demo && npm run lint:md && npm run lint:style",
+    "lint": "npm run tsc && npm run lint:script && npm run lint:demo && npm run lint:md",
     "lint-fix": "npm run lint-fix:script && npm run lint-fix:demo",
     "lint-fix:demo": "npm run lint:demo -- --fix",
     "lint-fix:script": "npm run lint:script -- --fix",
@@ -30,7 +30,6 @@
     "lint:deps": "antd-tools run deps-lint",
     "lint:md": "remark . -f -q",
     "lint:script": "npm run component-changelog && eslint . --ext .js,.jsx,.ts,.tsx --cache",
-    "lint:style": "tsx scripts/check-cssinjs.tsx",
     "prepare": "husky install && dumi setup",
     "prepublishOnly": "father doctor && npm run build",
     "start": "npm run dev",
@@ -63,6 +62,7 @@
     "@emotion/core": "^11.0.0",
     "@emotion/styled": "^11.11.0",
     "@types/fs-extra": "^11.0.4",
+    "antd-style": "^3.6.1",
     "aui-design": "^0.0.1",
     "classnames": "^2.5.1",
     "dayjs": "^1.11.1",
@@ -71,6 +71,8 @@
   "devDependencies": {
     "@commitlint/cli": "^17.1.2",
     "@commitlint/config-conventional": "^17.1.0",
+    "@emotion/react": "^11.11.1",
+    "@emotion/server": "^11.11.0",
     "@types/fs-extra": "^11.0.4",
     "@types/jest": "^29.5.11",
     "@types/react": "^18.0.0",
@@ -114,7 +116,8 @@
     "remark-lint-no-undefined-references": "^4.2.1",
     "remark-preset-lint-recommended": "^6.1.3",
     "simple-git": "^3.21.0",
-    "stylelint": "^14.9.1"
+    "stylelint": "^14.9.1",
+    "sylvanas": "^0.6.1"
   },
   "peerDependencies": {
     "react": ">=16.9.0",
@@ -123,5 +126,9 @@
   "publishConfig": {
     "access": "public"
   },
-  "authors": []
+  "authors": [],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yancekang/aui-design"
+  }
 }

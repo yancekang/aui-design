@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkaui_design=self.webpackChunkaui_design||[]).push([[252],{16672:function(a,u,n){n.r(u),n.d(u,{default:function(){return s}});var d=n(67294),t=n(85893);function s(){return(0,t.jsx)("div",{children:"DemoLayout"})}}}]);

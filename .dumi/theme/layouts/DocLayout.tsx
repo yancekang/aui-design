@@ -1,11 +1,14 @@
 import classNames from 'classnames';
-import { Helmet, useOutlet, useSiteData } from 'dumi';
+import { Helmet, useOutlet, useRouteMeta, useSiteData } from 'dumi';
 import React, { useEffect, useRef } from 'react';
 import Header from '../slots/Header';
 import SideMenu from '../slots/SideMenu';
 import '../style/common.scss';
+import dayjs from 'dayjs';
 
 const DocLayout: React.FC = () => {
+  const meta = useRouteMeta();
+  console.log(meta)
   const outlet = useOutlet();
   const { pathname, search, hash } = location;
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -79,7 +82,21 @@ const DocLayout: React.FC = () => {
       <Header />
       <div className="doc-container">
         <SideMenu />
-        <div>{outlet}</div>
+        <div>
+          <h1>{meta.frontmatter.title}</h1>
+          {outlet}
+          {meta.frontmatter.lastUpdated ? dayjs(meta.frontmatter.lastUpdated).format('YYYY-MM-DD hh:mm:ss') : null}
+          {meta.frontmatter.author &&
+            (meta.frontmatter.author as string)?.split(',')?.map((author) => (
+              <a
+                href={`https://github.com/${author}`}
+                key={author}
+                target="_blank" rel="noreferrer"
+              >
+                {`@${author}`}
+              </a>
+            ))}
+        </div>
       </div>
     </>
   );
